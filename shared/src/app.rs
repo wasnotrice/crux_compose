@@ -20,10 +20,10 @@ pub struct ViewModel {
 
 #[cfg_attr(feature = "typegen", derive(crux_core::macros::Export))]
 #[derive(crux_core::macros::Effect)]
-#[effect(app = "Composer")]
 pub struct Capabilities {
     render: Render<Event>,
-    compose: Compose<Event>,
+    #[effect(skip)]
+    pub compose: Compose<Event>,
 }
 
 #[derive(Default)]
